@@ -1,12 +1,48 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Document</title> 
 </head>
+
+<style>
+    #container{
+        display: grid;
+        grid-template-columns: repeat(9,11%);
+        margin-left: 20%;
+        margin-right: 20%;
+        margin-top: 7%;
+    }
+input{
+    height: 60px;
+    text-align: center;
+    font-size: 130%;
+}       
+</style>
+
 <body>
-    
+    <div id="container">
+
+    </div>
 </body>
+
 </html>
+
+<script>
+    var myContainer = document.getElementById('container')
+    //loop
+
+for(var i=0;i<9;i++){
+    for(var j=0;j<9;j++){
+        var myInput = document.createElement('input')
+        myInput.id = '${i}${j}'
+        var number = Math.ceil(Math.random()*9)
+        myInput.value=number
+        myContainer.appendChild(myInput)
+    }  
+}
+</script>
